@@ -1,10 +1,11 @@
-import { Shield, Cpu, ScanLine, FileSearch, Menu, X } from "lucide-react";
+import { Shield, Cpu, ScanLine, FileSearch, Rocket, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
 
 const NAV = [
   { to: "/", label: "Scanner", icon: ScanLine },
   { to: "/securedoc", label: "SecureDoc", icon: FileSearch },
+  { to: "/deploy", label: "Deploy", icon: Rocket },
 ] as const;
 
 export function ScannerHeader() {

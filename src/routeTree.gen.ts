@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SecuredocRouteImport } from './routes/securedoc'
+import { Route as DeployRouteImport } from './routes/deploy'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SecuredocRoute = SecuredocRouteImport.update({
   id: '/securedoc',
   path: '/securedoc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeployRoute = DeployRouteImport.update({
+  id: '/deploy',
+  path: '/deploy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/deploy': typeof DeployRoute
   '/securedoc': typeof SecuredocRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/deploy': typeof DeployRoute
   '/securedoc': typeof SecuredocRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/deploy': typeof DeployRoute
   '/securedoc': typeof SecuredocRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/securedoc'
+  fullPaths: '/' | '/deploy' | '/securedoc'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/securedoc'
-  id: '__root__' | '/' | '/securedoc'
+  to: '/' | '/deploy' | '/securedoc'
+  id: '__root__' | '/' | '/deploy' | '/securedoc'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeployRoute: typeof DeployRoute
   SecuredocRoute: typeof SecuredocRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/securedoc'
       fullPath: '/securedoc'
       preLoaderRoute: typeof SecuredocRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deploy': {
+      id: '/deploy'
+      path: '/deploy'
+      fullPath: '/deploy'
+      preLoaderRoute: typeof DeployRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeployRoute: DeployRoute,
   SecuredocRoute: SecuredocRoute,
 }
 export const routeTree = rootRouteImport
