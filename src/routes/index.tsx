@@ -1,17 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast, Toaster } from "sonner";
 import { Activity, Cpu, Lock, Sparkles } from "lucide-react";
 import { ScannerHeader } from "@/components/ScannerHeader";
 import { ScannerForm, type ScanType, type ScanDepth } from "@/components/ScannerForm";
 import { ScanResults, type ScanResult } from "@/components/ScanResults";
+import { AgentWorkflow } from "@/components/AgentWorkflow";
+import { MLIndicators } from "@/components/MLIndicators";
+import { TechStack } from "@/components/TechStack";
+import { SiteFooter } from "@/components/SiteFooter";
+import { ExportBar } from "@/components/ExportBar";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sentinel.AI — AMD-Powered Vulnerability Intelligence" },
-      { name: "description", content: "Sentinel.AI is an AI-driven cybersecurity scanner that identifies system vulnerabilities, scored and triaged by LLMs running on AMD Instinct GPUs." },
+      { title: "Sentinel.AI — Autonomous Vulnerability Intelligence Engine" },
+      { name: "description", content: "AI-driven cybersecurity scanner that finds, scores and triages vulnerabilities — powered by multi-agent reasoning on AMD Instinct GPUs." },
+      { property: "og:title", content: "Sentinel.AI — Autonomous Vulnerability Intelligence" },
+      { property: "og:description", content: "AI-driven cybersecurity scanner powered by AMD Instinct GPUs and agentic reasoning." },
     ],
   }),
   component: Index,
@@ -19,7 +26,17 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [loading, setLoading] = useState(false);
+  const [stage, setStage] = useState(-1);
   const [result, setResult] = useState<ScanResult | null>(null);
+
+  useEffect(() => {
+    if (!loading) { setStage(-1); return; }
+    setStage(0);
+    const t1 = setTimeout(() => setStage(1), 900);
+    const t2 = setTimeout(() => setStage(2), 1900);
+    const t3 = setTimeout(() => setStage(3), 2900);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+  }, [loading]);
 
   async function handleScan(target: string, scanType: ScanType, depth: ScanDepth) {
     setLoading(true);
@@ -45,7 +62,7 @@ function Index() {
       <Toaster theme="dark" position="top-right" />
       <ScannerHeader />
 
-      <main className="container mx-auto px-6 py-10 md:py-16 relative z-10">
+      <main className="container mx-auto px-5 md:px-6 py-10 md:py-16 relative z-10">
         {/* Hero */}
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 bg-secondary/40 border border-border rounded-full px-3 py-1 mb-6 backdrop-blur-md">
@@ -66,26 +83,45 @@ function Index() {
           </p>
         </div>
 
+        {/* ML signals */}
+        <div className="max-w-4xl mx-auto mb-6">
+          <MLIndicators />
+        </div>
+
         {/* Scanner */}
         <div className="max-w-3xl mx-auto">
           <ScannerForm onScan={handleScan} loading={loading} />
         </div>
 
-        {/* Results */}
-        <div className="max-w-4xl mx-auto mt-10">
+        {/* Agent workflow always visible */}
+        <div className="max-w-4xl mx-auto mt-6">
+          <AgentWorkflow active={loading} stage={stage} />
+        </div>
+
+        {/* Results / loading / features */}
+        <div className="max-w-4xl mx-auto mt-6">
           {result ? (
-            <ScanResults result={result} />
+            <div className="space-y-5">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <div>
+                  <div className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground">Threat Report</div>
+                  <h2 className="font-display font-bold text-2xl">Triaged Findings</h2>
+                </div>
+                <ExportBar payload={result} filename={`sentinel-${result.target}`} />
+              </div>
+              <ScanResults result={result} />
+            </div>
           ) : loading ? (
             <ScanLoading />
           ) : (
             <FeatureGrid />
           )}
         </div>
+
+        <TechStack />
       </main>
 
-      <footer className="container mx-auto px-6 py-10 text-center font-mono text-[10px] tracking-widest uppercase text-muted-foreground border-t border-border/40 mt-10">
-        Sentinel.AI · For authorized security testing only · Built for the AMD Developer Hackathon
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
@@ -97,10 +133,12 @@ function ScanLoading() {
     "Enumerating attack surface vectors...",
     "Cross-referencing CVE & CWE databases...",
     "Reasoning over OWASP heuristics...",
+    "Calculating CVSS scores...",
     "Compiling triaged report...",
   ];
   return (
-    <div className="bg-card-gradient border border-border rounded-xl p-6 backdrop-blur-md font-mono text-sm">
+    <div className="bg-card-gradient border border-border rounded-xl p-5 md:p-6 backdrop-blur-md font-mono text-sm relative overflow-hidden">
+      <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-scan" />
       <div className="flex items-center gap-2 mb-4 text-primary">
         <Activity className="w-4 h-4 animate-pulse" />
         <span className="tracking-widest text-xs uppercase">Live Trace</span>
@@ -110,7 +148,7 @@ function ScanLoading() {
           <div
             key={i}
             className="text-foreground/70 animate-in fade-in slide-in-from-left-2"
-            style={{ animationDelay: `${i * 350}ms`, animationFillMode: "backwards" }}
+            style={{ animationDelay: `${i * 320}ms`, animationFillMode: "backwards" }}
           >
             <span className="text-primary mr-2">▸</span>{l}
           </div>
