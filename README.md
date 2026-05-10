@@ -1,177 +1,305 @@
-```markdown
-# ⚡ SENTINEL.AI  
-### AI-Powered Vulnerability Intelligence Engine  
-*Built for the AMD Developer Hackathon*
-
 <div align="center">
 
-![AMD Hackathon](https://img.shields.io/badge/AMD-Developer%20Hackathon-ED1C24?style=for-the-badge&logo=amd&logoColor=white)
-![Track 1](https://img.shields.io/badge/Track-AI%20Agents%20%26%20Agentic%20Workflows-7C3AED?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-MVP%20Demo-brightgreen?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+```
+███████╗███████╗███╗   ██╗████████╗██╗███╗   ██╗███████╗██╗      █████╗ ██╗
+██╔════╝██╔════╝████╗  ██║╚══██╔══╝██║████╗  ██║██╔════╝██║     ██╔══██╗██║
+███████╗█████╗  ██╔██╗ ██║   ██║   ██║██╔██╗ ██║█████╗  ██║     ███████║██║
+╚════██║██╔══╝  ██║╚██╗██║   ██║   ██║██║╚██╗██║██╔══╝  ██║     ██╔══██║██║
+███████║███████╗██║ ╚████║   ██║   ██║██║ ╚████║███████╗███████╗██║  ██║██║
+╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝
+```
+
+### ⚡ AI-Powered Vulnerability Intelligence Engine
+
+<br/>
+
+[![AMD Hackathon](https://img.shields.io/badge/AMD_Developer_Hackathon_2026-ED1C24?style=for-the-badge&logo=amd&logoColor=white)](https://developer.amd.com)
+[![Track](https://img.shields.io/badge/Track_1-AI_Agents_%26_Agentic_Workflows-7C3AED?style=for-the-badge)](https://developer.amd.com)
+[![Status](https://img.shields.io/badge/Status-MVP_Demo-00ffcc?style=for-the-badge&labelColor=0d1117)](#)
+[![License](https://img.shields.io/badge/License-MIT-3B82F6?style=for-the-badge)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-→_Try_Now-00ffcc?style=for-the-badge&labelColor=0d1117)](https://sentinelsaiproject.lovable.app/)
+
+<br/>
+
+> **Four autonomous AI agents. One mission: find every vulnerability before attackers do.**
+
+<br/>
+
+[🚀 Live Demo](https://sentinelsaiproject.lovable.app/) · [📖 How It Works](#-how-it-works) · [🤖 AI Agents](#-ai-agent-pipeline) · [🛠️ Tech Stack](#-tech-stack) · [📸 Screenshots](#-screenshots)
 
 </div>
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x400/0a0a0a/00ffcc?text=SENTINEL.AI+Dashboard" alt="Sentinel Dashboard" width="800"/>
-</p>
-
 ---
 
-## 🚀 Overview
+## 🎯 What is SENTINEL.AI?
 
-**SENTINEL.AI** is a futuristic cybersecurity platform that demonstrates how **autonomous AI agents** can simulate vulnerability assessment workflows in a visually immersive environment.
+**SENTINEL.AI** is a next-generation cybersecurity intelligence platform that deploys **four autonomous AI agents** to simulate a complete vulnerability assessment workflow — from reconnaissance to scored PDF report — in a visually immersive cyberpunk environment.
 
-Built as a hackathon **MVP/Demo**, it shows how an intelligent system can:
+Built for the **AMD Developer Hackathon 2026 (Track 1: AI Agents & Agentic Workflows)**, it demonstrates how collaborative agentic AI systems can power real-world security workflows at AMD-hardware speed.
 
-- 🕵️ **Scan** web applications
-- 🔍 **Analyze** API endpoints
-- 🖥️ **Inspect** infrastructure surfaces
-- 📊 **Generate** AI‑powered vulnerability reports
-- 🧠 **Simulate** ML‑driven threat scoring
-
-All wrapped in a **neon cyberpunk UI** that mirrors the speed and power of AMD hardware.
+```
+Target URL ──▶ [ Recon Agent ] ──▶ [ Analysis Agent ] ──▶ [ Scoring Agent ] ──▶ [ Report Agent ] ──▶ PDF Report
+                    🕵️                    🔍                     🧠                     📄
+              Reconnaissance          Deep Scan              ML Scoring            AI Summary
+```
 
 ---
 
 ## ✨ Features
 
-| Category                | Description                                                                                     |
-|-------------------------|-------------------------------------------------------------------------------------------------|
-| 🔍 Smart Scan Engine    | Simulated AI scanning interface with live trace animation and risk highlighting.                |
-| 🌐 Web Security Analysis| Domain reconnaissance, technology detection, and attack‑surface visualization.                  |
-| 🔌 API Inspection       | REST/GraphQL security workflow simulator with mock endpoint scanning.                          |
-| 🖥️ System Intelligence  | Infrastructure risk overview, open‑port checks, and server surface analysis.                   |
-| 📄 AI Report Generator  | One‑click PDF‑style security summaries (downloadable mock report).                             |
-| 🧠 ML Threat Scoring    | Mock machine‑learning risk prioritization engine with color‑coded scores.                      |
-| ⚡ Cyberpunk UI         | AMD‑inspired neon dashboard with dark mode, glowing accents, and smooth transitions.           |
+<table>
+<tr>
+<td width="50%">
+
+### 🕵️ Recon Agent
+Autonomous domain intelligence gathering. Detects tech stack, open surfaces, and entry vectors before analysis begins.
+
+### 🔍 Analysis Agent
+Deep-dives into API endpoints, web application layers, and infrastructure. Surfaces hidden vulnerabilities with live trace animation.
+
+### 🧠 ML Scoring Agent
+Mock ML-driven threat prioritization. Color-coded risk scores (Critical / High / Medium / Low) with confidence percentages.
+
+</td>
+<td width="50%">
+
+### 📄 Report Agent
+One-click AI-generated security summaries. Downloadable PDF-style reports with executive overview and technical findings.
+
+### ⚡ Cyberpunk UI
+AMD-inspired neon dashboard. Dark mode, glowing accents, real-time scan animations, and silky smooth transitions.
+
+### 🔌 Multi-Surface Scanning
+Web, API (REST/GraphQL), and infrastructure scanning — all in a unified agentic workflow.
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🤖 AI Agent Pipeline
+
+Each agent operates autonomously and passes its findings to the next — mirroring a real crew of cybersecurity analysts.
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        SENTINEL.AI  PIPELINE                        │
+├──────────────┬──────────────┬──────────────┬────────────────────────┤
+│  Agent 1     │  Agent 2     │  Agent 3     │  Agent 4               │
+│  🕵️ Recon   │  🔍 Analysis │  🧠 Scoring  │  📄 Reporting          │
+├──────────────┼──────────────┼──────────────┼────────────────────────┤
+│ Domain scan  │ Surface map  │ ML risk rank │ PDF report             │
+│ Tech detect  │ Vuln trace   │ CVE matching │ Executive summary      │
+│ Entry points │ API probing  │ Confidence % │ Remediation steps      │
+└──────────────┴──────────────┴──────────────┴────────────────────────┘
+```
+
+| Agent | Role | Output |
+|-------|------|--------|
+| 🕵️ **Reconnaissance** | Domain & tech stack discovery | Attack surface map |
+| 🔍 **Analysis** | Deep vulnerability scanning | Findings with severity |
+| 🧠 **ML Scoring** | AI-driven risk prioritization | Scored vulnerability list |
+| 📄 **Reporting** | AI summary generation | Downloadable security report |
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer          | Technology                                                                                   |
-|----------------|----------------------------------------------------------------------------------------------|
-| **Frontend**   | React + TypeScript, Tailwind CSS, Vite                                                       |
-| **UI/UX**      | Custom cyber‑glow design system (no external UI library)                                     |
-| **AI Concept** | Simulated multi‑agent reasoning flow, inspired by CrewAI / LangChain patterns                |
-| **Build Tool** | Lovable AI (rapid prototyping)                                                               |
-| **Deployment** | Lovable / Vercel                                                                             |
-
-> ⚡ Designed to later integrate real AI models (Qwen, DeepSeek) and vector search for live CVE data.
-
----
-
-## 🎯 Hackathon Track
-
-**Track 1 – AI Agents & Agentic Workflows**
-
-SENTINEL.AI showcases an **agentic security workflow** where multiple simulated AI agents collaborate:
-
-1. Reconnaissance Agent  
-2. Analysis Agent  
-3. Reporting Agent  
-4. Scoring Agent  
-
-Each agent passes its findings to the next, mimicking a real crew of autonomous vulnerability analysts.
+<table>
+<tr>
+<td><b>Layer</b></td>
+<td><b>Technology</b></td>
+<td><b>Purpose</b></td>
+</tr>
+<tr>
+<td>🎨 Frontend</td>
+<td>React 18 + TypeScript + Vite</td>
+<td>Fast, type-safe UI</td>
+</tr>
+<tr>
+<td>💅 Styling</td>
+<td>Tailwind CSS + Custom Cyber Design</td>
+<td>Neon glow system, no UI lib</td>
+</tr>
+<tr>
+<td>🤖 AI Concept</td>
+<td>Simulated CrewAI / LangChain patterns</td>
+<td>Multi-agent agentic workflow</td>
+</tr>
+<tr>
+<td>⚡ Build</td>
+<td>Lovable AI + Vite</td>
+<td>Rapid prototyping + HMR</td>
+</tr>
+<tr>
+<td>🚀 Deploy</td>
+<td>Lovable / Vercel</td>
+<td>One-click deployment</td>
+</tr>
+<tr>
+<td>🔮 Roadmap</td>
+<td>Qwen2.5 + DeepSeek via OpenRouter</td>
+<td>Real AI integration (planned)</td>
+</tr>
+</table>
 
 ---
 
 ## 🧪 Live Demo
 
-🔗 **Experience SENTINEL.AI now:**  
-👉 [https://sentinelsaiproject.lovable.app/](https://sentinelsaiproject.lovable.app/)
+<div align="center">
+
+### 👉 [sentinelsaiproject.lovable.app](https://sentinelsaiproject.lovable.app/)
+
+| Step | Action |
+|------|--------|
+| 1️⃣ | Enter any domain (e.g. `example.com`) |
+| 2️⃣ | Watch 4 AI agents activate in sequence |
+| 3️⃣ | See live vulnerability trace animation |
+| 4️⃣ | Download your AI-generated security report |
+
+</div>
 
 ---
 
 ## 📸 Screenshots
 
-<details>
-<summary>Click to expand</summary>
+<table>
+<tr>
+<td align="center" width="50%">
 
-| Dashboard | Scan Results |
-|-----------|--------------|
-| ![Dashboard](https://via.placeholder.com/400x200/0d1117/00ffcc?text=Dashboard) | ![Scan](https://via.placeholder.com/400x200/0d1117/00ffcc?text=Scan+Trace) |
+**🖥️ Main Dashboard**
 
-</details>
+```
+╔══════════════════════════════╗
+║  SENTINEL.AI  ◉ ONLINE       ║
+║  ┌────────────────────────┐  ║
+║  │  TARGET: example.com   │  ║
+║  │  [▓▓▓▓▓▓░░░░]  60%     │  ║
+║  │  🕵️ Recon      ✓ Done  │  ║
+║  │  🔍 Analysis   ⟳ Live  │  ║
+║  │  🧠 Scoring    ○ Wait  │  ║
+║  │  📄 Report     ○ Wait  │  ║
+║  └────────────────────────┘  ║
+╚══════════════════════════════╝
+```
+
+</td>
+<td align="center" width="50%">
+
+**📊 Risk Score Output**
+
+```
+╔══════════════════════════════╗
+║  VULNERABILITIES FOUND: 14   ║
+║                              ║
+║  ████ CRITICAL   3  (21%)   ║
+║  ███░ HIGH        5  (36%)   ║
+║  ██░░ MEDIUM      4  (29%)   ║
+║  █░░░ LOW         2  (14%)   ║
+║                              ║
+║  ML CONFIDENCE:  94.7%       ║
+║  [📥 Download Report]        ║
+╚══════════════════════════════╝
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 📂 Project Structure
 
 ```
-SENTINEL.AI/
-├── public/             # Static assets
+sentinel-ai/
 ├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Route pages (Dashboard, Scanner, Reports)
-│   ├── hooks/          # Custom React hooks
-│   ├── lib/            # Mock data & simulation logic
-│   └── styles/         # Global CSS & Tailwind config
-├── .env.example
-├── package.json
-├── tailwind.config.js
-└── vite.config.ts
+│   ├── agents/                  # AI agent simulation logic
+│   │   ├── ReconAgent.ts        # 🕵️ Reconnaissance
+│   │   ├── AnalysisAgent.ts     # 🔍 Vulnerability analysis
+│   │   ├── ScoringAgent.ts      # 🧠 ML risk scoring
+│   │   └── ReportAgent.ts       # 📄 Report generation
+│   ├── components/
+│   │   ├── Dashboard/           # Main scan dashboard
+│   │   ├── AgentPipeline/       # Live agent progress UI
+│   │   ├── VulnTable/           # Vulnerability results
+│   │   └── ReportViewer/        # PDF-style report view
+│   ├── hooks/
+│   │   └── useScanFlow.ts       # Scan state management
+│   └── styles/
+│       └── cyber.css            # Neon glow design system
+├── public/
+├── README.md
+└── package.json
 ```
 
 ---
 
-## ⚙️ Running Locally
+## 🗺️ Roadmap
+
+| Status | Feature |
+|--------|---------|
+| ✅ Done | Cyberpunk UI with live agent animation |
+| ✅ Done | 4-agent simulated pipeline |
+| ✅ Done | ML risk scoring with color codes |
+| ✅ Done | Downloadable mock security report |
+| 🔄 Next | Real AI via Qwen2.5 + OpenRouter API |
+| 🔄 Next | Live CVE database integration |
+| 🔄 Next | FastAPI backend for real scanning |
+| 🔄 Next | AMD ROCm + vLLM local inference |
+
+---
+
+## 🏆 Hackathon Context
+
+**Event:** AMD Developer Hackathon 2026
+**Track:** Track 1 — AI Agents & Agentic Workflows
+
+**Why this fits Track 1:**
+
+SENTINEL.AI is a textbook agentic workflow. Each agent has a **distinct role**, **uses the previous agent's output as input**, and **operates autonomously** — exactly the collaborative multi-agent pattern that Track 1 targets.
+
+```
+Agentic Pattern Used:
+  Sequential Pipeline  →  Each agent triggers the next
+  Shared Context       →  Findings passed between agents
+  Specialization       →  Each agent has one focused job
+  Human-in-loop        →  User reviews and downloads report
+```
+
+---
+
+## 🚀 Run Locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/sentinel-ai.git
+# Clone
+git clone https://github.com/yourusername/sentinel-ai
 cd sentinel-ai
 
-# Install dependencies
+# Install
 npm install
 
-# Start development server
+# Run
 npm run dev
 ```
 
-Visit `http://localhost:5173` to explore the dashboard.
-
----
-
-## 🧠 Future Roadmap
-
-- [ ] Integrate **real AI models** (Qwen, DeepSeek, Llama) via API
-- [ ] Connect to live **NVD/CVE databases**
-- [ ] Build a proper **PDF export backend** with actual findings
-- [ ] Add **threat intelligence** feeds (AlienVault OTX, Shodan)
-- [ ] Implement **multi‑agent orchestration** with CrewAI or AutoGen
-- [ ] Browser extension for quick vulnerability checks
-
----
-
-## ⚠️ Disclaimer
-
-This project is a **hackathon prototype/demo** created for educational purposes and authorized security testing demonstrations only. It does **not** perform real vulnerability scanning. Do not use it on systems you do not own or have explicit permission to test.
-
----
-
-## 👨‍💻 Built For
-
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/512px-AMD_Logo.svg.png" width="150" />
-</p>
-
-**AMD Developer Hackathon** – *Powered by creativity, rapid prototyping, and AI‑assisted development.*
+Open [http://localhost:5173](http://localhost:5173)
 
 ---
 
 ## 📄 License
 
-This project is open source under the [MIT License](LICENSE).
+MIT License — see [LICENSE](LICENSE)
 
 ---
 
 <div align="center">
 
-**💜 If you like this project, drop a star ⭐ and share it with your team!**
+**Built with 🔥 for AMD Developer Hackathon 2026**
+
+*Track 1: AI Agents & Agentic Workflows*
+
+[![Live Demo](https://img.shields.io/badge/⚡_Try_SENTINEL.AI-00ffcc?style=for-the-badge&labelColor=0d1117)](https://sentinelsaiproject.lovable.app/)
 
 </div>
-```
-
-This README adds proper formatting, badges, emojis, tables, and future roadmap, making it visually appealing and hackathon-ready.
